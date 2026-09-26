@@ -1,23 +1,60 @@
 aid: aren
+
 name: Aren
-description: 'Aren is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Aren provides AI‑powered recruiting guidance for high‑school athletes and their families. The platform offers tools such as ScoutLens video analysis, AI‑driven camp search, and personalized consulting to help navigate college recruiting, transfer portals, and NIL considerations. It aims to reduce uncertainty and cost for families by delivering data‑driven recommendations and educational resources.'
+
 url: https://raw.githubusercontent.com/api-evangelist/aren/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-25'
+
 modified: '2026-09-25'
+
 tags:
 - Company
-apis: []
+- AI
+- Recruiting
+- Education
+- Sports
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/aren-hosts.yml
+- type: Vendors
+  url: vendors/aren-vendors.yml
+- type: DomainSecurity
+  url: security/aren-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.getaren.com/
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: Unable to resolve API host api.getaren.com to fetch OpenAPI spec
+  evidence:
+    - url: https://api.getaren.com/openapi.json
+      status: DNS resolution failed
+  checked: 2026-09-26
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
